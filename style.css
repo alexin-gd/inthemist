@@ -1,0 +1,25 @@
+body {
+  font-family: Georgia, serif;
+  max-width: 680px;
+  margin: 80px auto;
+  line-height: 1.7;
+  color: #222;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
