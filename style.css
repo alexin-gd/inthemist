@@ -62,7 +62,8 @@ a:hover {
 
 /* ===== Signature (optional, for titles only) ===== */
 
-.site-title {
+.page-title {
   font-family: "Parisienne", cursive;
   font-size: 2.5rem;
+  font-weight: normal;
 }
