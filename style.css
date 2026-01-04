@@ -89,7 +89,7 @@ a:hover {
 .final-page {
   font-family: "Alegreya", serif;
 }
-/* ===== Gallery Layout ===== */
+/* ===== Gallery Grid ===== */
 
 .gallery-grid {
   display: grid;
@@ -98,14 +98,53 @@ a:hover {
   margin-top: 32px;
 }
 
+/* ===== Gallery Card ===== */
+
 .gallery-card {
-  padding: 24px;
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
   background: #ffffff;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
-/* inward / upward motion only */
-.gallery-card:hover {
-  transform: translateY(-6px);
+/* Image inside card */
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ===== Hover Overlay ===== */
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Reveal text inward / upward only */
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay text styling */
+.gallery-overlay p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #222;
+  line-height: 1.5;
+  padding: 16px;
 }
