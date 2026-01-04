@@ -89,3 +89,23 @@ a:hover {
 .final-page {
   font-family: "Alegreya", serif;
 }
+/* ===== Gallery Layout ===== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gallery-card {
+  padding: 24px;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* inward / upward motion only */
+.gallery-card:hover {
+  transform: translateY(-6px);
+}
