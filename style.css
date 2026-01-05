@@ -148,3 +148,127 @@ a:hover {
   line-height: 1.5;
   padding: 16px;
 }
+
+/* ===== Books Masonry Layout ===== */
+
+.books-masonry {
+  column-count: 3;
+  column-gap: 32px;
+  margin-top: 40px;
+}
+
+/* individual book card */
+.book-card {
+  break-inside: avoid;
+  margin-bottom: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+/* book cover image */
+.book-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===== Book Hover Overlay (Left Reveal) ===== */
+
+.book-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay panel */
+.book-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* reveal from left */
+.book-card:hover .book-overlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* overlay text styling */
+.book-overlay .meta {
+  font-family: "Alegreya", serif;
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ===== Book Overlay Metadata Hierarchy ===== */
+
+.book-overlay .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Genre */
+.book-overlay .meta .genre {
+  font-family: "Spectral", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Country */
+.book-overlay .meta .country {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+/* Description */
+.book-overlay .meta p {
+  margin: 8px 0 0;
+  font-family: "Alegreya", serif;
+  font-size: 0.95rem;
+}
+
+/* Emoji reaction */
+.book-overlay .meta .reaction {
+  margin-top: 6px;
+  font-size: 1.2rem;
+}
+
+
+/* responsive tuning */
+@media (max-width: 900px) {
+  .books-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .books-masonry {
+    column-count: 1;
+  }
+}
+
+/* to feel gentler in smaller screens */
+@media (max-width: 500px) {
+  .book-overlay {
+    width: 85%;
+  }
+}
