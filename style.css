@@ -39,7 +39,7 @@ a:hover {
 /* ===== Card System ===== */
 
 .page-card {
-  max-width: 720px;
+  max-width: 680px;
   margin: 80px auto;
   padding: 60px;
   background: #ffffff;
@@ -252,6 +252,40 @@ a:hover {
   font-size: 1.2rem;
 }
 
+/* ===== Book Detail Page Cover ===== */
+
+.book-detail-cover {
+  max-width: 100px;   /* smaller than feed */
+  margin-bottom: 32px;
+  display: block;
+}
+
+/* ===== Book Detail Header ===== */
+
+.book-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.book-title {
+  font-family: "Alegreya", serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.book-author {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.back-link {
+  margin-top: 48px;
+}
 
 /* responsive tuning */
 @media (max-width: 900px) {
