@@ -149,16 +149,16 @@ a:hover {
   padding: 16px;
 }
 
-/* ===== Books Masonry Layout ===== */
+/* ===== Masonry Layout ===== */
 
-.books-masonry {
+.lib-masonry {
   column-count: 3;
   column-gap: 32px;
   margin-top: 40px;
 }
 
-/* individual book card */
-.book-card {
+/* individual card */
+.lib-card {
   break-inside: avoid;
   margin-bottom: 32px;
   background: #ffffff;
@@ -168,22 +168,22 @@ a:hover {
   position: relative;
 }
 
-/* book cover image */
-.book-card img {
+/* cover image */
+.lib-card img {
   width: 100%;
   display: block;
   border-radius: 12px;
 }
 
-/* ===== Book Hover Overlay (Left Reveal) ===== */
+/* ===== Hover Overlay (Left Reveal) ===== */
 
-.book-card {
+.lib-card {
   position: relative;
   overflow: hidden;
 }
 
 /* overlay panel */
-.book-overlay {
+.lib-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -203,36 +203,36 @@ a:hover {
 }
 
 /* reveal from left */
-.book-card:hover .book-overlay {
+.lib-card:hover .lib-overlay {
   opacity: 1;
   transform: translateX(0);
 }
 
 /* overlay text styling */
-.book-overlay .meta {
+.lib-overlay .meta {
   font-family: "Alegreya", serif;
   font-size: 0.95rem;
   color: #222;
   line-height: 1.5;
 }
 
-/* ===== Book Overlay Metadata Hierarchy ===== */
+/* ===== Overlay Metadata Hierarchy ===== */
 
-.book-overlay .meta {
+.lib-overlay .meta {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 /* Genre */
-.book-overlay .meta .genre {
+.lib-overlay .meta .genre {
   font-family: "Spectral", serif;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
 /* Country */
-.book-overlay .meta .country {
+.lib-overlay .meta .country {
   font-family: "Inter", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
@@ -240,36 +240,36 @@ a:hover {
 }
 
 /* Description */
-.book-overlay .meta p {
+.lib-overlay .meta p {
   margin: 8px 0 0;
   font-family: "Alegreya", serif;
   font-size: 0.95rem;
 }
 
 /* Emoji reaction */
-.book-overlay .meta .reaction {
+.lib-overlay .meta .reaction {
   margin-top: 6px;
   font-size: 1.2rem;
 }
 
-/* ===== Book Detail Page Cover ===== */
+/* ===== Detail Page Cover ===== */
 
-.book-detail-cover {
+.lib-detail-cover {
   max-width: 100px;   /* smaller than feed */
   margin-bottom: 32px;
   display: block;
 }
 
-/* ===== Book Detail Header ===== */
+/* ===== Detail Header ===== */
 
-.book-header {
+.lib-header {
   display: flex;
   align-items: flex-start;
   gap: 24px;
   margin-bottom: 40px;
 }
 
-.book-title {
+.title {
   font-family: "Alegreya", serif;
   font-size: 1.4rem;
   line-height: 1.2;
@@ -287,22 +287,325 @@ a:hover {
   margin-top: 48px;
 }
 
+.media-director {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+/* responsive tuning */
+/* ===== Base Typography ===== */
+
+body {
+  font-family: "Alegreya", Georgia, serif;
+  background-color: #ffffff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.75;
+}
+
+/* UI / navigation text */
+.ui {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Headings */
+h1 {
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Card System ===== */
+
+.page-card {
+  max-width: 680px;
+  margin: 80px auto;
+  padding: 60px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.section-card {
+  margin-top: 48px;
+  padding: 32px;
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+
+.item-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+/* ===== Typography Roles ===== */
+
+/* Only for the title of the website */
+.site-title {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5rem;
+}
+/* Identity / expressive titles */
+.page-title {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+/* Catalog / classification headings */
+.catalog-heading {
+  font-family: "Spectral", serif;
+  font-weight: 500;
+}
+
+/* Art / cinema headings */
+.media-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+/* Deep reading pages */
+.final-page {
+  font-family: "Alegreya", serif;
+}
+/* ===== Gallery Grid ===== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* ===== Gallery Card ===== */
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* Image inside card */
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ===== Hover Overlay ===== */
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Reveal text inward / upward only */
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay text styling */
+.gallery-overlay p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #222;
+  line-height: 1.5;
+  padding: 16px;
+}
+
+/* ===== Masonry Layout ===== */
+
+.lib-masonry {
+  column-count: 3;
+  column-gap: 24px;
+  margin-top: 40px;
+}
+
+/* individual card */
+.lib-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+/* cover image */
+.lib-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===== Hover Overlay (Left Reveal) ===== */
+
+/* overlay panel */
+.lib-overlay {
+  position: absolute;
+  inset: 0;
+
+  width: 70%;
+  background: rgba(255, 255, 255, 0.95);
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* reveal from left */
+.lib-card:hover .lib-overlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== Overlay Metadata ===== */
+
+.lib-overlay .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-family: "Alegreya", serif;
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.4;
+
+  position: relative;
+}
+
+/* Genre */
+.lib-overlay .meta .genre {
+  font-family: "Spectral", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Country */
+.lib-overlay .meta .country {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+/* Soft fade to signal continuation */
+.lib-overlay .meta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.4em;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.95)
+  );
+}
+
+/* Emoji reaction */
+.lib-overlay .meta .reaction {
+  margin-top: 6px;
+  font-size: 1.2rem;
+}
+
+
+/* ===== Detail Page Cover ===== */
+
+.lib-detail-cover {
+  max-width: 100px;   /* smaller than feed */
+  margin-bottom: 32px;
+  display: block;
+}
+
+/* ===== Detail Header ===== */
+
+.lib-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.lib-title {
+  font-family: "Alegreya", serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.lib-byline {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.lib-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.back-link {
+  margin-top: 48px;
+}
+
 /* responsive tuning */
 @media (max-width: 900px) {
-  .books-masonry {
+  .lib-masonry {
     column-count: 2;
   }
 }
 
 @media (max-width: 500px) {
-  .books-masonry {
+  .lib-masonry {
     column-count: 1;
   }
 }
 
 /* to feel gentler in smaller screens */
 @media (max-width: 500px) {
-  .book-overlay {
+  .lib-overlay {
     width: 85%;
   }
 }
