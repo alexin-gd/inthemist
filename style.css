@@ -590,6 +590,22 @@ a:hover {
   margin-top: 48px;
 }
 
+/* ===== Music Card ===== */
+
+.music-card {
+  display: block;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.music-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
 /* responsive tuning */
 @media (max-width: 900px) {
   .lib-masonry {
@@ -608,4 +624,23 @@ a:hover {
   .lib-overlay {
     width: 85%;
   }
+}
+
+/* for music only 50% overlay */
+/* overlay panel */
+.music-overlay {
+  position: absolute;
+  inset: 0;
+
+  width: 50%;
+  background: rgba(255, 255, 255, 0.95);
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
